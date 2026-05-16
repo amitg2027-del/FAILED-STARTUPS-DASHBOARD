@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Failed Indian Startups Analytics Dashboard</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #172033;
+        --muted: #5c667a;
+        --line: #dfe4ec;
+        --panel: #f6f8fb;
+        --accent: #0f766e;
+        --accent-dark: #115e59;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: #ffffff;
+        line-height: 1.55;
+      }
+
+      main {
+        width: min(1080px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 56px 0 72px;
+      }
+
+      header {
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 32px;
+        margin-bottom: 32px;
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        font-size: clamp(2rem, 4vw, 3.5rem);
+        line-height: 1.05;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin: 34px 0 12px;
+        font-size: 1.45rem;
+      }
+
+      p {
+        margin: 0 0 16px;
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+
+      a {
+        color: var(--accent-dark);
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 24px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0 18px;
+        border-radius: 6px;
+        border: 1px solid var(--accent);
+        background: var(--accent);
+        color: #ffffff;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .button.secondary {
+        background: #ffffff;
+        color: var(--accent-dark);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 14px;
+        margin: 18px 0 4px;
+      }
+
+      .tile {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 18px;
+        background: var(--panel);
+      }
+
+      .tile strong {
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      code,
+      pre {
+        font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+      }
+
+      pre {
+        overflow-x: auto;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #f7f9fc;
+        padding: 16px;
+      }
+
+      .note {
+        border-left: 4px solid var(--accent);
+        background: #eef8f6;
+        padding: 14px 16px;
+        border-radius: 6px;
+        color: var(--ink);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Failed Indian Startups Analytics Dashboard</h1>
+        <p>
+          A Streamlit analytics app for exploring shutdowns, funding loss, sector patterns,
+          correlations, regression models, and predictive what-if scenarios using <code>startups.xlsx</code>.
+        </p>
+        <div class="actions">
+          <a class="button" href="app.py">View app.py</a>
+          <a class="button secondary" href="README.md">Read setup guide</a>
+          <a class="button secondary" href="startups.xlsx">Download dataset</a>
+        </div>
+      </header>
+
+      <section>
+        <h2>What Is Included</h2>
+        <div class="grid">
+          <div class="tile">
+            <strong>Dashboard KPIs</strong>
+            Funding, shutdown counts, median years active, and top failed startups.
+          </div>
+          <div class="tile">
+            <strong>Sector Analysis</strong>
+            Sector-level capital exposure, failure categories, and risk scoring.
+          </div>
+          <div class="tile">
+            <strong>Correlation</strong>
+            Numeric heatmap and strongest metric relationships.
+          </div>
+          <div class="tile">
+            <strong>Prediction</strong>
+            Regression models, feature importance, and what-if prediction inputs.
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Run Locally</h2>
+        <pre><code>python -m venv .venv
+.\.venv\Scripts\activate
+pip install -r requirements.txt
+streamlit run app.py</code></pre>
+      </section>
+
+      <section>
+        <h2>Deploy From GitHub</h2>
+        <p>
+          Upload all files in this folder to the root of your GitHub repository. For Streamlit Cloud,
+          choose <code>app.py</code> as the main file.
+        </p>
+        <p class="note">
+          GitHub Pages can show this static <code>index.html</code> page, but the interactive dashboard
+          runs through Streamlit, not plain GitHub Pages.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

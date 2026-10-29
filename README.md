@@ -62,3 +62,8 @@ For Streamlit Cloud:
 ## Notes
 
 The workbook contains failed startups only, so the predictive section is not a survivor-vs-failure classifier. It predicts outcomes within the failed-company dataset, such as funding, losses, or other numeric business metrics.
+
+## Also in this repository: Paper Trading Desk
+
+A separate practice-trading app (India NSE and US, day trading plus options and futures) lives in
+[`trading_app/`](trading_app/README.md). Run it with `streamlit run trading_app/app.py`.

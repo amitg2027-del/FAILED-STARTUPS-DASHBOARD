@@ -6,3 +6,6 @@ __pycache__/
 .env
 .DS_Store
 Thumbs.db
+
+# Paper trading app: personal practice account
+trading_app/data/
